@@ -1,0 +1,4 @@
+{
+  "read": true,
+  "write": "auth.openid == '在这里填写开发者OpenID'"
+}

@@ -1,0 +1,8 @@
+.tab-bar { position: fixed; z-index: 100; left: 0; right: 0; bottom: 0; height: 112rpx; padding-bottom: env(safe-area-inset-bottom); background: rgba(255,255,255,.98); border-top: 1rpx solid #e2e8f0; box-shadow: 0 -8rpx 24rpx rgba(11,28,48,.09); display: flex; justify-content: space-around; align-items: center; }
+.tab-item { min-width: 80rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #64748b; font-size: 20rpx; font-weight: 600; }
+.tab-item.active { color: #1d4ed8; }
+.tab-icon { font-size: 35rpx; line-height: 39rpx; }
+.emergency { width: 106rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: -34rpx; color: #bb0112; font-size: 19rpx; font-weight: 700; }
+.emergency-disc { height: 92rpx; width: 92rpx; border-radius: 50%; background: #bb0112; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 9rpx 22rpx rgba(187,1,18,.34), inset 0 2rpx 2rpx rgba(255,255,255,.25); font-size: 40rpx; }
+.emergency.pressing .emergency-disc { transform: scale(.94); }
+.emergency-label { margin-top: 5rpx; }

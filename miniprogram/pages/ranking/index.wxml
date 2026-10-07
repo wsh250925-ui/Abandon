@@ -1,0 +1,11 @@
+<view class="page">
+  <view class="title">排行榜</view><view class="muted">和同伴一起保持学习节奏</view>
+  <view class="tabs"><view class="{{metric==='time'?'on':''}}" data-k="metric" data-v="time" bindtap="choose">学习时长</view><view class="{{metric==='score'?'on':''}}" data-k="metric" data-v="score" bindtap="choose">习题得分</view></view>
+  <view class="periods"><view class="{{period==='day'?'on':''}}" data-k="period" data-v="day" bindtap="choose">日榜</view><view class="{{period==='week'?'on':''}}" data-k="period" data-v="week" bindtap="choose">周榜</view><view class="{{period==='month'?'on':''}}" data-k="period" data-v="month" bindtap="choose">月榜</view><view class="{{period==='total'?'on':''}}" data-k="period" data-v="total" bindtap="choose">总榜</view></view>
+  <view class="podium-card">
+    <view class="podium-glow"></view>
+    <view wx:for="{{podium}}" wx:key="rank" class="podium-item rank-{{item.rank}}"><view class="avatar-wrap"><view wx:if="{{item.empty}}" class="avatar empty-avatar"></view><image wx:elif="{{item.avatarUrl}}" class="avatar" src="{{item.avatarUrl}}" mode="aspectFill"/><view wx:else class="avatar avatar-text">{{item.avatarText}}</view><view class="rank-medal">{{item.rank}}</view></view><view class="podium-name">{{item.nickname}}</view><view class="podium-value">{{item.display}}</view><view class="podium-base"><text>NO.{{item.rank}}</text><text wx:if="{{item.rank===1}}">首席急救学员</text><text wx:elif="{{item.rank===2}}">银牌急救学员</text><text wx:else>铜牌急救学员</text></view></view>
+  </view>
+  <view class="follow-card"><view class="follow-head"><text>跟进梯队</text><text>每周一 00:00 结算</text></view><view wx:for="{{followRows}}" wx:key="rank" class="follow-row"><text class="follow-rank">{{item.rank}}</text><view wx:if="{{item.empty}}" class="follow-avatar empty-avatar"></view><view wx:else class="follow-avatar">{{item.avatarText}}</view><view class="follow-main"><text>{{item.nickname}}</text><text wx:if="{{item.nickname}}">{{metric==='score'?'已获得':'已学习'}} {{item.display}}</text></view><view class="follow-score">{{item.display}}</view></view></view>
+  <view class="my-rank"><view class="my-rank-bg"></view><view class="my-rank-number">{{demo?'8':'—'}}</view><view class="my-rank-main"><text>我的排名：{{myRank}}</text><text>{{myGap}}</text></view><button bindtap="goStudy">去冲榜</button></view>
+</view>

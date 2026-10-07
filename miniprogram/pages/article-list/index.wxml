@@ -1,0 +1,7 @@
+<view class="list-page">
+  <view class="page-heading"><view class="eyebrow">知识速读</view><view class="title">图文课</view><view class="subtitle">用几分钟读懂一个急救知识点</view></view>
+  <view class="search-bar"><text class="search-icon">⌕</text><input value="{{keyword}}" confirm-type="search" placeholder="搜索图文课标题" bindinput="onSearch"/><text wx:if="{{keyword}}" class="clear" bindtap="onSearch">×</text></view>
+  <view wx:if="{{loading}}" class="empty">正在加载图文课…</view>
+  <view wx:elif="{{!articles.length}}" class="empty">没有找到相关图文课</view>
+  <view wx:else class="article-list"><view wx:for="{{articles}}" wx:key="_id" class="article-card" data-id="{{item._id}}" bindtap="openArticle"><image src="{{item.cover}}" mode="aspectFill"/><view class="article-info"><view class="article-badge">图文课程</view><view class="article-title">{{item.title}}</view><view class="article-summary">{{item.meta}}</view></view><text class="article-arrow">›</text></view></view>
+</view>

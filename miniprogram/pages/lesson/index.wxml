@@ -1,0 +1,18 @@
+<view class="lesson-page" wx:if="{{lesson}}">
+  <view class="lesson-header"><text class="header-title">{{pageTitle}}</text></view>
+  <view class="video-shell">
+    <video wx:if="{{playable}}" class="lesson-video" id="learningVideo" src="{{videoUrl}}" controls="true" autoplay="false" bindplay="onPlay" bindpause="onPause" bindended="onEnded" bindtimeupdate="onTimeUpdate" bindseeking="onSeeking"></video>
+    <view wx:else class="video-empty"><text>视频暂未上传</text><text>请由开发者在后台补充视频文件</text></view>
+    <view class="quality-tag">高清</view>
+  </view>
+  <view class="playing-panel">
+    <view class="playing-row"><text class="playing-tag">正在播放</text><text wx:if="{{isGrouped}}" class="group-name">{{course.title}}</text></view>
+    <view class="current-name">{{lesson.title}}</view>
+  </view>
+  <view class="intro-card"><view class="intro-title">课程简介</view><view class="intro-text">{{lesson.description || lesson.subtitle || '本节课程正在准备中。'}}</view><view class="watch-stat">已累计有效观看 {{uniqueSeconds}} 秒 · 自动保存学习进度</view></view>
+  <view class="directory-head"><view class="directory-tab">课程目录 <text>({{lessons.length}})</text></view></view>
+  <view class="directory-meta"><text>当前学习进度 {{completedCount}}/{{lessons.length}} 课时完成</text><text wx:if="{{isGrouped}}">总计时长 {{totalDurationText}}</text></view>
+  <view class="lesson-list"><view wx:for="{{lessons}}" wx:key="_id" class="lesson-row {{item.status}}" data-id="{{item._id}}" bindtap="openLesson"><view class="lesson-number">{{item.index<10?'0':''}}{{item.index}}</view><view class="lesson-main"><view class="lesson-title">{{item.title}}</view><view class="lesson-sub"><text>{{item.durationText}}</text><text wx:if="{{item.subtitle}}">{{item.subtitle}}</text></view><view wx:if="{{item.status==='current'}}" class="current-progress">已学 {{item.percent}}% · {{item.durationText}} <text>正在学</text></view></view><view wx:if="{{item.status==='done'}}" class="done-badge">✓ 已学完</view><view wx:elif="{{item.status==='todo'}}" class="todo-badge">◷ 未开始</view><view wx:else class="replay">↻</view></view></view>
+  <view wx:if="{{!isGrouped}}" class="solo-tip"><view class="solo-tip-title">学习提示</view><view>本课是独立课程，完成观看后可以去学习更多内容，掌握更多知识喔。</view><button class="tip-button" bindtap="openStudyList">前往课程列表</button></view>
+  <view wx:if="{{isGrouped}}" class="lesson-actions"><button class="previous" disabled="{{currentIndex===0}}" bindtap="previous">↶ 复习上节</button><button class="next" disabled="{{currentIndex===lessons.length-1}}" bindtap="next">观看下节 ᐅ</button></view>
+</view>

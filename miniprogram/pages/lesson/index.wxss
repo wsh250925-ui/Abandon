@@ -1,0 +1,48 @@
+/* 视频学习页：页面布局与按钮样式集中维护，避免局部调整覆盖整页样式。 */
+page { background: #f8f9ff; }
+.lesson-page { min-height: 100vh; width: 100%; box-sizing: border-box; background: #f8f9ff; color: #10254b; padding-bottom: calc(28rpx + env(safe-area-inset-bottom)); }
+.lesson-header { min-height: 88rpx; display: flex; align-items: center; justify-content: center; padding: 16rpx 28rpx; box-sizing: border-box; background: #f8f9ff; }
+.header-title { max-width: 100%; font-size: 32rpx; font-weight: 700; line-height: 1.4; text-align: center; }
+.video-shell { position: relative; width: 100%; height: 422rpx; overflow: hidden; background: #142438; }
+.lesson-video { display: block; width: 100%; height: 100%; }
+.video-empty { height: 100%; padding: 28rpx; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #dce9ff; text-align: center; font-size: 27rpx; }
+.video-empty text + text { margin-top: 14rpx; font-size: 22rpx; color: #aebed5; }
+.quality-tag { position: absolute; top: 18rpx; right: 18rpx; padding: 6rpx 12rpx; border: 1rpx solid rgba(255,255,255,.3); border-radius: 7rpx; background: rgba(11,28,48,.72); color: #fff; font-size: 21rpx; font-weight: 700; pointer-events: none; }
+.playing-panel { background: #fff; padding: 24rpx; box-shadow: 0 4rpx 12rpx rgba(24,53,96,.05); }
+.playing-row { display: flex; align-items: center; min-height: 36rpx; }
+.playing-tag { flex-shrink: 0; padding: 6rpx 11rpx; border-radius: 6rpx; background: #0037b0; color: #fff; font-size: 20rpx; font-weight: 700; }
+.group-name { margin-left: 12rpx; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #64748b; font-size: 22rpx; }
+.current-name { margin-top: 14rpx; font-size: 32rpx; font-weight: 700; line-height: 1.45; word-break: break-all; }
+.intro-card { margin: 20rpx 24rpx; padding: 24rpx; border: 1rpx solid #e1e9fa; border-radius: 20rpx; background: #eff4ff; box-shadow: 0 5rpx 14rpx rgba(24,53,96,.06); }
+.intro-title { color: #1d4ed8; font-size: 26rpx; font-weight: 700; }
+.intro-text { margin-top: 10rpx; color: #34496b; font-size: 24rpx; line-height: 1.7; white-space: pre-wrap; word-break: break-all; }
+.watch-stat { margin-top: 16rpx; color: #71809b; font-size: 21rpx; line-height: 1.5; }
+.directory-head { display: flex; justify-content: center; background: #fff; border-bottom: 1rpx solid #e4eaf4; }
+.directory-tab { padding: 22rpx 36rpx; border-bottom: 5rpx solid #0037b0; color: #0037b0; font-size: 28rpx; font-weight: 700; }
+.directory-tab text { margin-left: 6rpx; font-size: 22rpx; font-weight: 500; }
+.directory-meta { display: flex; flex-wrap: wrap; justify-content: space-between; padding: 20rpx 26rpx 12rpx; color: #64748b; font-size: 21rpx; line-height: 1.6; }
+.lesson-list { padding: 0 24rpx; }
+.lesson-row { display: flex; align-items: center; min-height: 124rpx; box-sizing: border-box; margin-bottom: 14rpx; padding: 22rpx 18rpx; border: 1rpx solid #e5ebf5; border-radius: 20rpx; background: #fff; box-shadow: 0 5rpx 14rpx rgba(24,53,96,.065); }
+.lesson-row.current { background: #e5efff; border-color: #c5d8ff; box-shadow: 0 6rpx 16rpx rgba(29,78,216,.12); }
+.lesson-number { width: 40rpx; flex-shrink: 0; margin-right: 16rpx; color: #64748b; font-size: 27rpx; text-align: center; }
+.current .lesson-number { color: #1d4ed8; font-weight: 700; }
+.lesson-main { flex: 1; min-width: 0; }
+.lesson-title { font-size: 27rpx; font-weight: 700; line-height: 1.45; word-break: break-all; }
+.current .lesson-title { color: #0037b0; }
+.lesson-sub { display: flex; align-items: baseline; margin-top: 8rpx; color: #64748b; font-size: 21rpx; line-height: 1.4; }
+.lesson-sub text:first-child { flex-shrink: 0; margin-right: 12rpx; }
+.lesson-sub text:last-child { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.current-progress { margin-top: 9rpx; color: #315bd6; font-size: 21rpx; line-height: 1.6; }
+.current-progress text { display: inline-block; margin-left: 8rpx; padding: 2rpx 7rpx; border-radius: 5rpx; color: #fff; background: #1d4ed8; font-size: 18rpx; }
+.done-badge, .todo-badge { flex-shrink: 0; margin-left: 12rpx; padding: 7rpx 10rpx; border-radius: 22rpx; background: #e9f0ff; color: #1d4ed8; font-size: 19rpx; white-space: nowrap; }
+.todo-badge { background: #f2f4f8; color: #71809b; }
+.replay { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 54rpx; height: 54rpx; margin-left: 12rpx; border-radius: 50%; background: #fff; color: #1d4ed8; font-size: 34rpx; box-shadow: 0 3rpx 9rpx rgba(29,78,216,.12); }
+.solo-tip { margin: 22rpx 24rpx 0; padding: 24rpx; border: 1rpx solid #e2e8f0; border-radius: 20rpx; background: #fff; box-shadow: 0 5rpx 14rpx rgba(24,53,96,.06); color: #64748b; font-size: 23rpx; line-height: 1.65; }
+.solo-tip-title { margin-bottom: 9rpx; color: #10254b; font-size: 26rpx; font-weight: 700; }
+.solo-tip .tip-button { display: flex; align-items: center; justify-content: center; box-sizing: border-box; margin: 20rpx 0 0; padding: 0 24rpx; width: 100%; height: 76rpx; line-height: 1; border-radius: 18rpx; background: #eaf1ff; color: #1d4ed8; font-size: 25rpx; font-weight: 700; box-shadow: 0 4rpx 10rpx rgba(29,78,216,.1); }
+.tip-button:active { background: #dce8ff; }
+.lesson-actions { position: sticky; bottom: 0; display: flex; padding: 18rpx 24rpx calc(18rpx + env(safe-area-inset-bottom)); background: #f8f9ff; border-top: 1rpx solid #e5ebf5; }
+.lesson-actions button { display: flex; align-items: center; justify-content: center; flex: 1; min-width: 0; height: 82rpx; box-sizing: border-box; margin: 0; padding: 0 12rpx; border-radius: 16rpx; font-size: 25rpx; font-weight: 700; line-height: 1; }
+.lesson-actions .previous { margin-right: 16rpx; background: #dfeaff; color: #25436b; }
+.lesson-actions .next { background: #0037b0; color: #fff; box-shadow: 0 6rpx 12rpx rgba(0,55,176,.22); }
+.lesson-actions button[disabled] { background: #e9edf5; color: #98a4b8; box-shadow: none; }

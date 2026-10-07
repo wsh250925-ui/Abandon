@@ -1,0 +1,35 @@
+# Dependencies and generated WeChat npm bundles
+node_modules/
+miniprogram_npm/
+
+# Developer-specific settings and credentials
+project.private.config.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+.netrc
+credentials*.json
+secrets*.json
+*.local.json
+
+# Logs, caches, local exports and temporary files
+*.log
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+~$*
+.idea/
+.vscode/
+coverage/
+dist/
+tmp/
+temp/
+backups/
+exports/
+team-plan-qa/

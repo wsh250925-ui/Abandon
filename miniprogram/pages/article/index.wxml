@@ -1,0 +1,15 @@
+<view wx:if="{{loading || error}}" class="article-status">{{error || '正在加载图文…'}}</view>
+<view class="article-page" wx:if="{{article}}">
+  <view class="eyebrow">急救知识科普</view><view class="title">{{article.title}}</view><view class="summary">{{article.summary}}</view><image wx:if="{{coverUrl}}" src="{{coverUrl}}" mode="widthFix" class="cover"/>
+  <view class="content">
+    <block wx:for="{{blocks}}" wx:key="id">
+      <rich-text wx:if="{{item.type==='text'}}" nodes="{{item.html}}"></rich-text>
+      <view wx:else class="article-image-block">
+        <image wx:if="{{item.src && item.state!=='error'}}" class="article-image" src="{{item.src}}" mode="widthFix" data-index="{{index}}" bindload="onImageLoad" binderror="onImageError" bindtap="previewImage"/>
+        <view wx:if="{{item.state==='loading' && !item.src}}" class="image-status">图片加载中…</view>
+        <view wx:if="{{item.state==='error'}}" class="image-status" data-index="{{index}}" bindtap="retryImage">图片暂未加载，点击重试</view>
+      </view>
+    </block>
+  </view>
+  <view class="notice">内容仅供知识学习；紧急情况请呼叫 120 并听从专业人员指引。</view>
+</view>

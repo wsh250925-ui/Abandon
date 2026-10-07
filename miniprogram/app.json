@@ -1,0 +1,27 @@
+{
+  "pages": ["pages/home/index", "pages/aed/index", "pages/study/index", "pages/profile/index", "pages/video-list/index", "pages/article-list/index", "pages/quiz/index", "pages/ranking/index", "pages/lesson/index", "pages/article/index", "pages/admin/index"],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "急救学习",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {"scope.userLocation": {"desc": "用于搜索您附近的 AED 设备位置及计算路线时间"}},
+  "requiredPrivateInfos": ["getLocation"],
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "custom": true,
+    "color": "#64748b",
+    "selectedColor": "#1d4ed8",
+    "backgroundColor": "#ffffff",
+    "list": [
+      { "pagePath": "pages/home/index", "text": "首页" },
+      { "pagePath": "pages/aed/index", "text": "AED导航" },
+      { "pagePath": "pages/study/index", "text": "学习" },
+      { "pagePath": "pages/profile/index", "text": "我的" }
+    ]
+  }
+}
